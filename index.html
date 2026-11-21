@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cloudio</title>
+    <meta
+      name="description"
+      content="Portfolio of Jean Cloud D. Alipa: web and Android development, networking, and animation projects."
+    />
+    <meta name="theme-color" content="#090e0c" />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+    <!-- Fonts (fallbacks are set in css/style.css, so the site still works offline) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Reveal animations only run when JS is available -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- ===== Header / Navigation ===== -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="#home"
+          aria-label="Jean Cloud D. Alipa, back to top"
+        >
+          <span class="brand-mark" aria-hidden="true">JA</span>
+          <span class="brand-name">Jean Cloud D. Alipa</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Open menu"
+        >
+          <span class="bar"></span><span class="bar"></span>
+        </button>
+
+        <nav class="site-nav" id="siteNav" aria-label="Main">
+          <ul>
+            <li><a href="#work" class="nav-link">Work</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ===== Hero ===== -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="status">
+              <span class="pulse" aria-hidden="true"></span>Information
+              Technology student
+            </p>
+            <h1 id="hero-title">
+              <span>Jean Cloud</span> <span class="accent">D. Alipa</span>
+            </h1>
+            <p class="hero-role">
+              I design and build websites, Android apps, and animations.
+            </p>
+            <p class="hero-lead">
+              I turn ideas into clean, easy-to-use digital work. Browse a
+              selection of what I've built so far.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#work"
+                >View my projects <span aria-hidden="true">&rarr;</span></a
+              >
+              <a class="btn btn-ghost" href="#contact">Contact me</a>
+            </div>
+
+            <dl class="stats">
+              <div>
+                <dt>Featured projects</dt>
+                <dd data-count-of=".project">5</dd>
+              </div>
+              <div>
+                <dt>Disciplines</dt>
+                <dd data-count-of=".skill-group">3</dd>
+              </div>
+              <div>
+                <dt>Skills and tools</dt>
+                <dd data-count-of=".chips li">12</dd>
+              </div>
+            </dl>
+          </div>
+
+          <figure class="hero-photo">
+            <div class="photo-frame">
+              <img
+                src="assets/images/jean-cloud-alipa.jpg"
+                alt="Portrait of Jean Cloud D. Alipa wearing a black cap and shirt, standing in a green forest"
+                width="1100"
+                height="1091"
+              />
+            </div>
+            <div class="now-card">
+              <span class="pulse" aria-hidden="true"></span>
+              <p>
+                <small>Right now</small>Studying IT and building across web,
+                mobile, networking, and animation.
+              </p>
+            </div>
+          </figure>
+        </div>
+
+        <!-- Tool ticker (decorative; real list is in Skills) -->
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker-track">
+            <ul>
+              <li>HTML and CSS</li>
+              <li>JavaScript</li>
+              <li>Android Studio</li>
+              <li>Cisco Packet Tracer</li>
+              <li>Adobe Animate</li>
+              <li>Canva</li>
+              <li>Responsive design</li>
+              <li>VLANs</li>
+            </ul>
+            <ul>
+              <li>HTML and CSS</li>
+              <li>JavaScript</li>
+              <li>Android Studio</li>
+              <li>Cisco Packet Tracer</li>
+              <li>Adobe Animate</li>
+              <li>Canva</li>
+              <li>Responsive design</li>
+              <li>VLANs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Work ===== -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <div>
+              <p class="eyebrow">Work</p>
+              <h2 id="work-title">Selected projects</h2>
+              <p class="section-intro measure">
+                A selection of my recent work. Use the filters to find what
+                interests you.
+              </p>
+            </div>
+            <div class="filters" role="group" aria-label="Filter projects">
+              <button
+                class="filter is-active"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button class="filter" data-filter="apps" aria-pressed="false">
+                Web and apps
+              </button>
+              <button class="filter" data-filter="network" aria-pressed="false">
+                Networking
+              </button>
+              <button
+                class="filter"
+                data-filter="creative"
+                aria-pressed="false"
+              >
+                Creative
+              </button>
+            </div>
+          </header>
+
+          <div class="projects-grid" id="projectsGrid">
+            <article
+              class="project featured reveal"
+              data-category="apps"
+              data-title="Jeepney Juggle: Pasahero Rush"
+            >
+              <div class="project-art art-apps" aria-hidden="true">
+                <svg
+                  viewBox="0 0 400 220"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M0 176h400" opacity=".35" />
+                  <path
+                    d="M20 176h40M110 176h60M230 176h50M330 176h50"
+                    stroke-width="4"
+                    opacity=".5"
+                  />
+                  <path
+                    d="M96 150V98c0-8 6-14 14-14h138c16 0 24 8 32 24l16 28c4 6 6 10 6 18v-4H96z"
+                    fill="currentColor"
+                    fill-opacity=".14"
+                  />
+                  <path
+                    d="M96 150V98c0-8 6-14 14-14h138c16 0 24 8 32 24l16 28c4 6 6 10 6 18v0H96z"
+                  />
+                  <path
+                    d="M96 112h190M112 84v28M152 84v28M192 84v28M232 84v28"
+                    opacity=".6"
+                  />
+                  <circle cx="146" cy="156" r="16" fill="#090e0c" />
+                  <circle cx="146" cy="156" r="5" />
+                  <circle cx="268" cy="156" r="16" fill="#090e0c" />
+                  <circle cx="268" cy="156" r="5" />
+                  <circle cx="330" cy="130" r="7" opacity=".7" />
+                  <path d="M330 138v22M322 148h16" opacity=".7" />
+                  <circle cx="364" cy="130" r="7" opacity=".4" />
+                  <path d="M364 138v22" opacity=".4" />
+                  <path d="M110 64h132" stroke-width="3" opacity=".8" />
+                </svg>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="cat cat-apps"
+                    ><span class="dot" aria-hidden="true"></span>Web and
+                    apps</span
+                  >
+                  <span class="badge">Featured</span>
+                  <span class="num" aria-hidden="true">01</span>
+                </div>
+                <h3>Jeepney Juggle: Pasahero Rush</h3>
+                <p>
+                  A fast, playful HTML5 Canvas game where you pick up passengers
+                  and keep the jeepney moving. Built in Adobe Animate with
+                  JavaScript.
+                </p>
+                <ul class="tags">
+                  <li>HTML5 Canvas</li>
+                  <li>JavaScript</li>
+                  <li>Adobe Animate</li>
+                </ul>
+                <a
+                  class="project-link"
+                  href="#contact"
+                  aria-label="Ask about Jeepney Juggle: Pasahero Rush"
+                  >Ask about this project
+                  <span aria-hidden="true">&rarr;</span></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="project reveal"
+              data-category="apps"
+              data-title="Android Calculator"
+            >
+              <div class="project-art art-apps" aria-hidden="true">
+                <svg
+                  viewBox="0 0 400 220"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect
+                    x="145"
+                    y="14"
+                    width="110"
+                    height="192"
+                    rx="16"
+                    fill="currentColor"
+                    fill-opacity=".1"
+                  />
+                  <rect
+                    x="157"
+                    y="30"
+                    width="86"
+                    height="30"
+                    rx="6"
+                    opacity=".7"
+                  />
+                  <path d="M170 46h40" stroke-width="3" />
+                  <g opacity=".75">
+                    <rect x="157" y="70" width="18" height="18" rx="4" />
+                    <rect x="180" y="70" width="18" height="18" rx="4" />
+                    <rect x="203" y="70" width="18" height="18" rx="4" />
+                    <rect x="226" y="70" width="17" height="18" rx="4" />
+                    <rect x="157" y="94" width="18" height="18" rx="4" />
+                    <rect x="180" y="94" width="18" height="18" rx="4" />
+                    <rect x="203" y="94" width="18" height="18" rx="4" />
+                    <rect x="226" y="94" width="17" height="18" rx="4" />
+                    <rect x="157" y="118" width="18" height="18" rx="4" />
+                    <rect x="180" y="118" width="18" height="18" rx="4" />
+                    <rect x="203" y="118" width="18" height="18" rx="4" />
+                    <rect x="226" y="118" width="17" height="18" rx="4" />
+                    <rect x="157" y="142" width="18" height="18" rx="4" />
+                    <rect x="180" y="142" width="18" height="18" rx="4" />
+                    <rect x="203" y="142" width="18" height="18" rx="4" />
+                    <rect
+                      x="226"
+                      y="142"
+                      width="17"
+                      height="18"
+                      rx="4"
+                      fill="currentColor"
+                      fill-opacity=".5"
+                    />
+                    <rect x="157" y="166" width="18" height="18" rx="4" />
+                    <rect x="180" y="166" width="18" height="18" rx="4" />
+                    <rect x="203" y="166" width="18" height="18" rx="4" />
+                    <rect
+                      x="226"
+                      y="166"
+                      width="17"
+                      height="18"
+                      rx="4"
+                      fill="currentColor"
+                      fill-opacity=".5"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="cat cat-apps"
+                    ><span class="dot" aria-hidden="true"></span>Web and
+                    apps</span
+                  >
+                  <span class="badge">Featured</span>
+                  <span class="num" aria-hidden="true">02</span>
+                </div>
+                <h3>Android Calculator</h3>
+                <p>
+                  A clean calculator layout with a 4 by 5 keypad, built with
+                  ConstraintLayout and GridLayout in Android Studio.
+                </p>
+                <ul class="tags">
+                  <li>Android Studio</li>
+                  <li>XML</li>
+                </ul>
+                <a
+                  class="project-link"
+                  href="#contact"
+                  aria-label="Ask about Android Calculator"
+                  >Ask about this project
+                  <span aria-hidden="true">&rarr;</span></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="project reveal"
+              data-category="network"
+              data-title="Hybrid Network Simulations"
+            >
+              <div class="project-art art-network" aria-hidden="true">
+                <svg
+                  viewBox="0 0 400 220"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M200 110L110 50M200 110L110 170M200 110L290 50M200 110L290 170M200 110H60M200 110H340"
+                    opacity=".5"
+                  />
+                  <path
+                    d="M290 50L340 110L290 170"
+                    opacity=".5"
+                    stroke-dasharray="4 6"
+                  />
+                  <path
+                    d="M110 50L60 110L110 170"
+                    opacity=".5"
+                    stroke-dasharray="4 6"
+                  />
+                  <circle cx="200" cy="110" r="22" fill="#090e0c" />
+                  <circle cx="200" cy="110" r="22" />
+                  <path d="M190 110h20M200 100v20" opacity=".8" />
+                  <g fill="#090e0c">
+                    <circle cx="110" cy="50" r="12" />
+                    <circle cx="110" cy="170" r="12" />
+                    <circle cx="290" cy="50" r="12" />
+                    <circle cx="290" cy="170" r="12" />
+                    <circle cx="60" cy="110" r="12" />
+                    <circle cx="340" cy="110" r="12" />
+                  </g>
+                  <g fill="currentColor" fill-opacity=".3">
+                    <circle cx="110" cy="50" r="5" />
+                    <circle cx="110" cy="170" r="5" />
+                    <circle cx="290" cy="50" r="5" />
+                    <circle cx="290" cy="170" r="5" />
+                    <circle cx="60" cy="110" r="5" />
+                    <circle cx="340" cy="110" r="5" />
+                  </g>
+                </svg>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="cat cat-network"
+                    ><span class="dot" aria-hidden="true"></span
+                    >Networking</span
+                  >
+                  <span class="badge">Featured</span>
+                  <span class="num" aria-hidden="true">03</span>
+                </div>
+                <h3>Hybrid Network Simulations</h3>
+                <p>
+                  Multi-router networks that combine star, tree, bus, ring, and
+                  mesh topologies, with VLANs, RIP v2, static NAT, and tested
+                  connections.
+                </p>
+                <ul class="tags">
+                  <li>Cisco Packet Tracer</li>
+                  <li>VLAN</li>
+                  <li>NAT</li>
+                </ul>
+                <a
+                  class="project-link"
+                  href="#contact"
+                  aria-label="Ask about Hybrid Network Simulations"
+                  >Ask about this project
+                  <span aria-hidden="true">&rarr;</span></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="project reveal"
+              data-category="creative"
+              data-title="Chismis News"
+            >
+              <div class="project-art art-creative" aria-hidden="true">
+                <svg
+                  viewBox="0 0 400 220"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect
+                    x="70"
+                    y="24"
+                    width="260"
+                    height="148"
+                    rx="14"
+                    fill="currentColor"
+                    fill-opacity=".1"
+                  />
+                  <rect
+                    x="84"
+                    y="38"
+                    width="232"
+                    height="104"
+                    rx="8"
+                    opacity=".7"
+                  />
+                  <circle cx="200" cy="90" r="24" fill="#090e0c" />
+                  <circle cx="200" cy="90" r="24" />
+                  <path
+                    d="M193 78l18 12-18 12z"
+                    fill="currentColor"
+                    fill-opacity=".7"
+                  />
+                  <rect
+                    x="84"
+                    y="150"
+                    width="232"
+                    height="12"
+                    rx="6"
+                    opacity=".6"
+                  />
+                  <path d="M96 156h70" stroke-width="3" />
+                  <path d="M150 196h100" stroke-width="3" opacity=".5" />
+                  <path d="M200 172v24" opacity=".5" />
+                </svg>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="cat cat-creative"
+                    ><span class="dot" aria-hidden="true"></span>Creative</span
+                  >
+                  <span class="badge">Featured</span>
+                  <span class="num" aria-hidden="true">04</span>
+                </div>
+                <h3>Chismis News</h3>
+                <p>
+                  A two-minute animated news comedy made with a partner, with
+                  original voices and sharp comic timing.
+                </p>
+                <ul class="tags">
+                  <li>Adobe Animate</li>
+                  <li>24 FPS</li>
+                  <li>Voice acting</li>
+                </ul>
+                <a
+                  class="project-link"
+                  href="#contact"
+                  aria-label="Ask about Chismis News"
+                  >Ask about this project
+                  <span aria-hidden="true">&rarr;</span></a
+                >
+              </div>
+            </article>
+
+            <article
+              class="project reveal"
+              data-category="creative"
+              data-title="Seminar Journal"
+            >
+              <div class="project-art art-creative" aria-hidden="true">
+                <svg
+                  viewBox="0 0 400 220"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M200 30v160" opacity=".5" />
+                  <path
+                    d="M200 30c-30-12-70-14-120-6v158c50-8 90-6 120 6z"
+                    fill="currentColor"
+                    fill-opacity=".1"
+                  />
+                  <path
+                    d="M200 30c30-12 70-14 120-6v158c-50-8-90-6-120 6z"
+                    fill="currentColor"
+                    fill-opacity=".06"
+                  />
+                  <path d="M200 30c-30-12-70-14-120-6v158c50-8 90-6 120 6z" />
+                  <path d="M200 30c30-12 70-14 120-6v158c-50-8-90-6-120 6z" />
+                  <rect
+                    x="100"
+                    y="52"
+                    width="80"
+                    height="48"
+                    rx="4"
+                    opacity=".7"
+                  />
+                  <path d="M100 118h80M100 134h60M100 150h72" opacity=".5" />
+                  <path d="M222 56h78" stroke-width="4" />
+                  <path
+                    d="M222 78h78M222 94h60M222 110h70M222 126h50"
+                    opacity=".5"
+                  />
+                  <circle cx="290" cy="150" r="14" opacity=".7" />
+                </svg>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="cat cat-creative"
+                    ><span class="dot" aria-hidden="true"></span>Creative</span
+                  >
+                  <span class="badge">Featured</span>
+                  <span class="num" aria-hidden="true">05</span>
+                </div>
+                <h3>Seminar Journal</h3>
+                <p>
+                  A magazine-style journal about the Mobile Android and Web
+                  Application Development seminar, designed in Canva.
+                </p>
+                <ul class="tags">
+                  <li>Canva</li>
+                  <li>Layout design</li>
+                </ul>
+                <a
+                  class="project-link"
+                  href="#contact"
+                  aria-label="Ask about Seminar Journal"
+                  >Ask about this project
+                  <span aria-hidden="true">&rarr;</span></a
+                >
+              </div>
+            </article>
+          </div>
+          <p class="empty-note" id="emptyNote" hidden>
+            No projects in this group yet. Check back soon.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== About + Journey ===== -->
+      <section
+        class="section section-alt"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="container about-grid">
+          <div class="about-main reveal">
+            <p class="eyebrow">About</p>
+            <h2 id="about-title">About me</h2>
+            <p class="measure">
+              I'm an Information Technology student who enjoys making things
+              that look good and are simple to use. I build web pages and
+              Android layouts, set up small networks, and bring stories to life
+              with animation.
+            </p>
+            <p class="measure">
+              I learn best by building. Every project here started as a class
+              activity and grew into something I'm proud to show.
+            </p>
+
+            <dl class="facts">
+              <div class="fact">
+                <dt>Role</dt>
+                <dd>IT student</dd>
+              </div>
+              <div class="fact">
+                <dt>Focus</dt>
+                <dd>Web and Android development</dd>
+              </div>
+              <div class="fact">
+                <dt>Also into</dt>
+                <dd>Animation and networking</dd>
+              </div>
+              <div class="fact">
+                <dt>Based in</dt>
+                <dd>Philippines</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="journey reveal" id="journey">
+            <h3 class="journey-title">My journey</h3>
+            <p class="journey-intro">The milestones so far, newest first.</p>
+            <ol class="timeline">
+              <li>
+                <h4>Now</h4>
+                <p>
+                  Studying IT and building projects across web, mobile,
+                  networking, and animation.
+                </p>
+              </li>
+              <li>
+                <h4>October 2026</h4>
+                <p>
+                  Joined a two-day seminar-workshop on Mobile Android and Web
+                  Development and wrote a magazine-style journal about it.
+                </p>
+              </li>
+              <li>
+                <h4>2026 class work</h4>
+                <p>
+                  Finished hands-on activities in Adobe Animate and Cisco Packet
+                  Tracer, from motion tweens to full hybrid networks.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Skills ===== -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <div>
+              <p class="eyebrow">Skills</p>
+              <h2 id="skills-title">Skills and tools</h2>
+              <p class="section-intro measure">
+                What I use to design, build, and connect things.
+              </p>
+            </div>
+          </header>
+
+          <div class="skills-grid">
+            <article class="skill-group group-apps reveal">
+              <h3>
+                <span class="dot" aria-hidden="true"></span>Web and mobile
+              </h3>
+              <ul class="chips">
+                <li>HTML and CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive design</li>
+                <li>Android Studio</li>
+                <li>XML layouts and ConstraintLayout</li>
+              </ul>
+            </article>
+            <article class="skill-group group-network reveal">
+              <h3><span class="dot" aria-hidden="true"></span>Networking</h3>
+              <ul class="chips">
+                <li>Cisco Packet Tracer</li>
+                <li>VLANs</li>
+                <li>RIP v2 routing</li>
+                <li>Static NAT</li>
+              </ul>
+            </article>
+            <article class="skill-group group-creative reveal">
+              <h3><span class="dot" aria-hidden="true"></span>Creative</h3>
+              <ul class="chips">
+                <li>Adobe Animate</li>
+                <li>Canva</li>
+                <li>Storyboarding</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Contact ===== -->
+      <section
+        class="section contact"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container">
+          <div class="contact-card reveal">
+            <div class="contact-intro">
+              <p class="eyebrow">Contact</p>
+              <h2 id="contact-title">Let's work together</h2>
+              <p class="measure">
+                Have a project, an opportunity, or a question? Send me a message
+                and I'll reply as soon as I can.
+              </p>
+
+              <!-- TODO: replace the links below with your real accounts -->
+              <ul class="contact-links">
+                <li>
+                  <a href="mailto:your.email@example.com"
+                    ><span>Email</span><strong>your.email@example.com</strong
+                    ><i aria-hidden="true">&rarr;</i></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/your-username"
+                    target="_blank"
+                    rel="noopener"
+                    ><span>GitHub</span><strong>github.com/your-username</strong
+                    ><i aria-hidden="true">&nearr;</i></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/your-profile"
+                    target="_blank"
+                    rel="noopener"
+                    ><span>Facebook</span
+                    ><strong>facebook.com/your-profile</strong
+                    ><i aria-hidden="true">&nearr;</i></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/your-profile"
+                    target="_blank"
+                    rel="noopener"
+                    ><span>LinkedIn</span
+                    ><strong>linkedin.com/in/your-profile</strong
+                    ><i aria-hidden="true">&nearr;</i></a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="field">
+                <label for="name">Your name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                />
+                <p class="error" id="nameError" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="email">Your email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
+                <p class="error" id="emailError" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+                <p class="error" id="messageError" role="alert"></p>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send message <span aria-hidden="true">&rarr;</span>
+              </button>
+              <p class="form-status" id="formStatus" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; <span id="year">2026</span> Jean Cloud D. Alipa. All rights
+          reserved.
+        </p>
+        <a href="#top" class="footer-top"
+          >Back to top <span aria-hidden="true">&uarr;</span></a
+        >
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
